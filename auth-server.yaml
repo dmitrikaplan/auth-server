@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: auth-server
-          image: auth-server:1
+          image: dmitrykaplan/auth-server:1
           envFrom:
             - secretRef:
                 name: auth-server-secret
