@@ -9,7 +9,7 @@ import ru.kaplaan.authserver.web.dto.response.JwtResponse
 @Service
 interface AuthService {
 
-    fun register(user: User)
+    fun register(user: User): User
 
     fun authenticate(userIdentification: UserIdentification): JwtResponse
 

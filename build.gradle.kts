@@ -45,6 +45,9 @@ dependencies {
 	//test
 	testImplementation("org.springframework.amqp:spring-rabbit-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
+	testImplementation("org.mockito:mockito-inline:5.2.0")
 }
 
 tasks.withType<KotlinCompile> {

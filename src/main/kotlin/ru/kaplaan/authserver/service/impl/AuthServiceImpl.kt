@@ -24,7 +24,7 @@ class AuthServiceImpl(
 ) : AuthService {
 
     @Transactional
-    override fun register(user: User) {
+    override fun register(user: User): User {
 
         checkRegistration(user)
 
@@ -35,8 +35,9 @@ class AuthServiceImpl(
             this.activationCode = activationCode
         }
 
-        userService.save(user)
-        emailService.activateUserByEmail(user.email, user.username, activationCode)
+        return userService.save(user).also {
+            emailService.activateUserByEmail(user.email, user.username, activationCode)
+        }
     }
 
     @Transactional
